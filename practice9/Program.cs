@@ -51,6 +51,7 @@ namespace practice9
                 {
                     Console.WriteLine("Введите элемент, осталось: {0}", N);
                     mark.Next = new Point(int.Parse(Console.ReadLine()));
+                    mark = mark.Next;
                     N--;
                 } while (N != 0);
             }
@@ -63,6 +64,7 @@ namespace practice9
                 do
                 {
                     mark.Next = new Point(r.Next(-100, 100));
+                    mark = mark.Next;
                     N--;
                 } while (N != 0);
             }
@@ -91,8 +93,8 @@ namespace practice9
             }
             #endregion
 
-            Console.WriteLine("Сумма всех положительных чисел", sumBigger0);
-            Console.WriteLine("Сумма всех отрицательных чисел", sumLesser0);
+            Console.WriteLine("Сумма всех положительных чисел {0}", sumBigger0);
+            Console.WriteLine("Сумма всех отрицательных чисел {0}", sumLesser0);
         }
     }
 }
