@@ -8,8 +8,8 @@ namespace practice9
 {
     class Point
     {
-        int Info { get; set; }
-        Point Next { get; set; }
+        public int Info { get; set; }
+        public Point Next { get; set; }
         public Point(int info)
         {
             Info = info;
