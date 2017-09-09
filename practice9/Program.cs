@@ -37,47 +37,50 @@ namespace practice9
             Console.WriteLine("Введите количество элементов в списке");
             
             N = int.Parse(Console.ReadLine());
-            Console.WriteLine("0 - Не случайно");
-            Console.WriteLine("Не 0 - Случайное заполнение списка");
-
-            temp = int.Parse(Console.ReadLine());
-            if (temp == 0)
+            if (N > 0)
             {
-                Console.WriteLine("Введите элемент, осталось: {0}", N);
-                test = new Point(int.Parse(Console.ReadLine()));
-                mark = test;
-                N--;
-                do
+                Console.WriteLine("0 - Не случайно");
+                Console.WriteLine("Не 0 - Случайное заполнение списка");
+
+                temp = int.Parse(Console.ReadLine());
+
+                if (temp == 0)
                 {
                     Console.WriteLine("Введите элемент, осталось: {0}", N);
-                    mark.Next = new Point(int.Parse(Console.ReadLine()));
-                    mark = mark.Next;
+                    test = new Point(int.Parse(Console.ReadLine()));
+                    mark = test;
                     N--;
-                } while (N != 0);
-            }
-            else
-            {
-
-                test = new Point(r.Next(-100, 100));
-                mark = test;
-                N--;
-                do
+                    do
+                    {
+                        Console.WriteLine("Введите элемент, осталось: {0}", N);
+                        mark.Next = new Point(int.Parse(Console.ReadLine()));
+                        mark = mark.Next;
+                        N--;
+                    } while (N != 0);
+                }
+                else
                 {
-                    mark.Next = new Point(r.Next(-100, 100));
-                    mark = mark.Next;
-                    N--;
-                } while (N != 0);
-            }
-            mark = test;
-            temp = 1;
-            Console.Clear();
-            while (mark != null)
-            {
-                Console.WriteLine("{0, 3}: {1, -3}", temp, mark.Info);
-                mark = mark.Next;
-                temp++;
-            }
 
+                    test = new Point(r.Next(-100, 100));
+                    mark = test;
+                    N--;
+                    do
+                    {
+                        mark.Next = new Point(r.Next(-100, 100));
+                        mark = mark.Next;
+                        N--;
+                    } while (N != 0);
+                }
+                mark = test;
+                temp = 1;
+                Console.Clear();
+                while (mark != null)
+                {
+                    Console.WriteLine("{0, 3}: {1, -3}", temp, mark.Info);
+                    mark = mark.Next;
+                    temp++;
+                }
+            }
             #endregion
 
             #region Решение
